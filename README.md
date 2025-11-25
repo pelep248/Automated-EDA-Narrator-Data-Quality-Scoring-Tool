@@ -55,20 +55,22 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 ## 5. Project Structure
 
 data-narrator/
-├─ data/ # example CSV files
-├─ src/
-│ ├─ cli.py # command-line interface
-│ ├─ orchestrator.py # DatasetPipeline
-│ ├─ loader.py
-│ ├─ preprocessor.py
-│ ├─ eda_analyzer.py
-│ ├─ quality_scorer.py
-│ ├─ narrator.py
-│ └─ report_builder.py
-├─ tests/
-├─ notebooks/
-├─ requirements.txt
-└─ README.md
+├─ data/                    # CSV files and sample datasets
+│  └─ sample.csv
+├─ src/                     # Main modules (importable and reusable)
+│  ├─ __init__.py
+│  ├─ loader.py             # Loads CSV files
+│  ├─ preprocessor.py       # Cleans and preprocesses data
+│  ├─ eda_analyzer.py       # Numeric and categorical EDA analysis
+│  ├─ quality_scorer.py     # Computes data quality scores
+│  ├─ narrator.py           # Generates human-readable insights
+│  ├─ report_builder.py     # Builds markdown reports
+│  └─ orchestrator.py       # DatasetPipeline: orchestrates all classes
+├─ demo.py                  # Ready-to-run mini demo for practical example
+├─ tests/                   # Unit tests (optional)
+├─ notebooks/               # Jupyter notebooks for exploration (optional)
+├─ README.md                # Project documentation
+└─ requirements.txt         # Python dependencies
 
 ---
 
