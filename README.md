@@ -54,6 +54,7 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 
 ## 5. Project Structure
 
+```
 data-narrator/
 ├─ data/                    # CSV files and sample datasets
 │  └─ sample.csv
@@ -71,7 +72,7 @@ data-narrator/
 ├─ notebooks/               # Jupyter notebooks for exploration (optional)
 ├─ README.md                # Project documentation
 └─ requirements.txt         # Python dependencies
-
+```
 ---
 
 | Requirement                                  | Project Implementation                                                                                                                                                                                                                                                                                      |
