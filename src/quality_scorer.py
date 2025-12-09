@@ -60,7 +60,7 @@ class QualityScorer:
         self.scores['duplicates'] = max(0, 100 - pct * 2)
         return self.scores['duplicates']
 
-    def outlier_score(self):
+    def outliers_score(self):
         """
         Compute the quality score based on number of detected outliers.
 
