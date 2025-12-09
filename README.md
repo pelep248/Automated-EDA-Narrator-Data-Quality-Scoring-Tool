@@ -1,6 +1,15 @@
-# Automated-EDA-Narrator-Data-Quality-Scoring-Tool
-# DatasetSense: Automated EDA Narrator + Data Quality Scoring Tool
+<img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/7e2e6462-a6e5-44d5-9dee-1b7bf0b56b15" />
+<img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/0faf116a-3b63-47a6-a9d3-9618e4f2cb0a" />
+<img width="1920" height="1080" alt="10" src="https://github.com/user-attachments/assets/a233036f-7424-4f33-9842-bf6324fb3fcb" />
+<img width="1920" height="1080" alt="9" src="https://github.com/user-attachments/assets/48cc0c45-0b8d-4532-8b5a-ea0b6b511bdb" />
+<img width="1920" height="1080" alt="8" src="https://github.com/user-attachments/assets/92bede9f-6d03-4bf8-ae47-43a8feefd719" />
+<img width="1920" height="1080" alt="7" src="https://github.com/user-attachments/assets/312736cd-a0ad-4b16-a1bd-80072fb4da3a" />
+<img width="1920" height="1080" alt="6" src="https://github.com/user-attachments/assets/c9d794a8-366a-4e7d-b6b3-10c03d666cec" />
+<img width="1920" height="1080" alt="5" src="https://github.com/user-attachments/assets/05a36316-7668-410a-a66c-4d6679860081" />
+<img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/22e6c06c-f4a4-458f-b9cc-c7c78d455a8d" />
+<img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/60450c54-db19-41d0-937e-ee0fdd545af7" />
 
+# DatasetSense: Automated EDA Narrator + Data Quality Scoring Tool
 ## 1. Project Overview
 DatasetSense is a Python tool that performs **automated exploratory data analysis (EDA)** and computes a **dataset quality score (0–100)**. It generates **human-readable insights** and produces a **markdown report** summarizing dataset characteristics and quality.  
 
