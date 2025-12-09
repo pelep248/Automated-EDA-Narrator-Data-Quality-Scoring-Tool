@@ -17,8 +17,9 @@ class DataLoader:
     Class to load CSV files into a pandas DataFrame and provide metadata.
 
     Attributes:
-        _path (str): Path to the CSV file (protected).
-        _df (pd.DataFrame or None): Loaded DataFrame, initially None.
+        _path (str): Path to the CSV file.
+        _df (pd.DataFrame): Loaded DataFrame (protected).
+
     """
 
     def __init__(self, path):
