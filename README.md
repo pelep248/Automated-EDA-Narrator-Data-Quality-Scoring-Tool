@@ -88,7 +88,7 @@ data-narrator/
 ```
 # Dataset Facade UML
 
-![Dataset UML](dataset_uml.png)
+![Dataset UML](datasetsense_uml.png)
 
 ---
 
