@@ -45,19 +45,38 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 - Markdown export (.md)
 - CLI configurable output
 - Integrates narratives + scores + stats into a clean report
+  
+---
+## Installation
 
+Clone the Repository
+```bash
+git clone https://github.com/LexusMaximus/Automated-EDA-Narrator-Data-Quality-Scoring-Tool.git
+cd Automated-EDA-Narrator-Data-Quality-Scoring-Tool
+```
+Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+If installing manually:
+
+```bash
+pip install pandas>=1.5 numpy scipy tabulate python-dateutil
+```
 ---
 
 ## System Architecture (UML)
 
 ![Dataset UML](pics/dataset_uml.png)
 
+The UML expresses class collaboration via composition: 
 
+DatasetPipeline → DataLoader → Preprocessor → EDAAnalyzer → QualityScorer → Narrator → ReportBuilder
 
 
 ---
 
-## 4. Object-Oriented Design
+## Object-Oriented Design
 
 | OOP Concept        | How it’s applied in your project                                                                                                                                                                             |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -71,7 +90,7 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 
 ---
 
-## 5. Project Structure
+## Project Structure
 
 ```
 data-narrator/
@@ -92,9 +111,6 @@ data-narrator/
 ├─ README.md                # Project documentation
 └─ requirements.txt         # Python dependencies
 ```
-# Dataset Facade UML
-
-![Dataset UML](datasetsense_uml.png)
 
 ---
 
@@ -104,3 +120,80 @@ data-narrator/
 | **Must be importable and reusable**          | All modules are in `src/` with proper `__init__.py`, allowing imports like: <br>`from src.loader import DataLoader`                                                                                                                                                                                         |
 ---
 
+## Usage & Testing
+
+Run on Any CSV (Python Script)
+
+```python
+from src.orchestrator import DatasetPipeline
+
+pipeline = DatasetPipeline("data/sample.csv")
+report = pipeline.run()
+
+print(report)  # prints markdown report to console
+```
+Run via CLI
+
+```bash
+python src/cli.py data/sample.csv
+```
+Output prints directly to terminal.
+Save Markdown to file:
+
+```bash
+python src/cli.py data/sample.csv --out reports/sample_report.md
+```
+
+Terminal confirmation:
+
+```bash
+Wrote report to reports/sample_report.md
+```
+Run in Google Colab / Jupyter
+
+```bash
+!git clone https://github.com/LexusMaximus/Automated-EDA-Narrator-Data-Quality-Scoring-Tool.git
+```
+
+```python
+import sys
+sys.path.insert(0, '/content/Automated-EDA-Narrator-Data-Quality-Scoring-Tool/src')
+
+from orchestrator import DatasetPipeline
+
+pipeline = DatasetPipeline("Automated-EDA-Narrator-Data-Quality-Scoring-Tool/data/sample.csv")
+report = pipeline.run()
+print(report)
+```
+Run entire test suite
+
+```bash
+pytest
+```
+Sample Test Snippet
+
+```python
+from src.loader import DataLoader
+
+def test_loader_reads_csv():
+    loader = DataLoader("data/sample.csv")
+    df = loader.load()
+    assert len(df) > 0
+```
+```python
+from src.quality_scorer import QualityScorer
+
+def test_quality_scoring_runs():
+    dummy = {"missing": {"col": {"pct": 0}}, "duplicates": 0, "outliers": {"col": 0}}
+    scorer = QualityScorer(dummy, df_len=100)
+    score = scorer.overall_score()
+    assert 0 <= score <= 100
+```
+```python
+from src.orchestrator import DatasetPipeline
+
+def test_pipeline_execution():
+    pipe = DatasetPipeline("data/sample.csv")
+    report = pipe.run()
+    assert "Automated EDA Report" in report
+```
