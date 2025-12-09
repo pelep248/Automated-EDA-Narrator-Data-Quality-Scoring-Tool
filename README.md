@@ -1,4 +1,3 @@
-
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/24f98fd5-f0c4-46ab-b243-3c65dcf2b622" />
 <img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/bec9141f-2ea4-4c8c-9a79-cbfa335a58d7" />
 <img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/2fc72025-7b48-4ef0-8899-1cd6b572b058" />
@@ -11,7 +10,6 @@
 <img width="1920" height="1080" alt="10" src="https://github.com/user-attachments/assets/839655ed-b3bf-4cec-97ff-1f11f00787e7" />
 
 
-
 # DatasetSense: Automated EDA Narrator + Data Quality Scoring Tool
 ## 1. Project Overview
 DatasetSense is a Python tool that performs **automated exploratory data analysis (EDA)** and computes a **dataset quality score (0–100)**. It generates **human-readable insights** and produces a **markdown report** summarizing dataset characteristics and quality.  
@@ -20,34 +18,42 @@ The project demonstrates **object-oriented programming (OOP)** concepts includin
 
 ---
 
-## 2. Team Members
-| Member | Role |
-|--------|------|
-| Mark Orano | DataLoader + Preprocessor |
-| Jomar Ligas | NumericAnalyzer + CategoricalAnalyzer (EDA) |
-| Lex Leander Lumantas | QualityScorer |
-| Philip Andree Tupas | Narrator |
-| Josh Ganhinhin | DatasetPipeline + ReportBuilder + Integration |
+## 📦 Features
+
+### Automated EDA
+- Statistical profiling (mean, std, quartiles)
+- Categorical profiling (frequency distribution, unique ratio)
+- Outlier detection summary
+- Missing value analysis per feature
+
+### Data Quality Intelligence
+| Metric          | Basis                    | Weight |
+| --------------- | ------------------------ | ------ |
+| Missing Score   | % missing values         | 35%    |
+| Duplicate Score | duplicate row %          | 15%    |
+| Outlier Score   | detected outliers vs N   | 25%    |
+| Balance Score   | categorical distribution | 25%    |
+- Missing values, duplicates, outliers, balance score
+-  💯 Final weighted score (0–100)
+-  🔎 Quality verdict: Excellent / Good / Fair / Poor
+
+### Natural-Language Narration
+- Generates explanation of dataset shape, variability, missing values, outliers & verdict
+- Converts analysis metrics into human-readable insights
+
+### Automated Report Generation
+- Markdown export (.md)
+- CLI configurable output
+- Integrates narratives + scores + stats into a clean report
 
 ---
 
-## 3. Features
+## System Architecture (UML)
 
-### Automated EDA
-- Numeric analysis: mean, std, quartiles, outliers
-- Categorical analysis: value counts, top categories
-- Missing value and duplicate detection
-- Correlation matrix for numeric columns
+![Dataset UML](pics/dataset_uml.png)
 
-### Data Quality Scoring
-- Missing values, duplicates, outliers, balance score
-- Weighted overall score (0–100)
-- Simple verdict: Excellent / Good / Fair / Poor
 
-### Report Generation
-- Narrative insights in human-readable sentences
-- Markdown-formatted quality report
-- Optional JSON output
+
 
 ---
 
