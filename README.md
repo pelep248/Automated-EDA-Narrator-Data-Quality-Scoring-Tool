@@ -1,6 +1,7 @@
 <p align="center">
   <img src="pics/Datasetsense_logo.png" alt="DatasetSense Logo">
 </p>
+
 # DatasetSense: Automated EDA Narrator + Data Quality Scoring Tool
 
 ## 1. Project Overview
