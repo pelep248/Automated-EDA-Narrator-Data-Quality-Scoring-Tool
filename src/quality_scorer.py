@@ -48,7 +48,7 @@ class QualityScorer:
         self.scores['missing'] = max(0, 100 - np.mean(pct))
         return self.scores['missing']
 
-    def duplicate_score(self):
+    def duplicates_score(self):
         """
         Compute the quality score based on duplicate rows.
 
